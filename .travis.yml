@@ -16,5 +16,4 @@ before_script:
 - if [ \( -n "${TRAVIS_TAG}" \) -a  "${TRAVIS_PULL_REQUEST}" = "false" ]; then export
   TARGET="deploy -P release"; fi;
 script:
-- curl -s ${JDKW} | bash /dev/stdin ./mvnw clean ${TARGET} --settings settings.xml
-  -P rpm -U
+- curl -s ${JDKW} | bash /dev/stdin ./mvnw clean ${TARGET} --settings settings.xml -U
