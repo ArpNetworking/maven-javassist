@@ -31,6 +31,8 @@ public @interface Processed {
 
     /**
      * The full classpaths of the class processors which have been run against this class.
+     *
+     * @return classpaths of the class processors which have been run against this class.
      */
     String[] value() default {};
 }
