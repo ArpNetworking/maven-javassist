@@ -18,18 +18,18 @@
   <parent>
     <groupId>com.arpnetworking.build</groupId>
     <artifactId>arpnetworking-parent-pom</artifactId>
-    <version>1.0.24</version>
+    <version>1.0.27</version>
     <relativePath />
   </parent>
 
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.arpnetworking.commons</groupId>
-  <artifactId>maven-javassist</artifactId>
+  <artifactId>javassist-maven-parent</artifactId>
   <packaging>pom</packaging>
   <name>Maven Javassist Parent</name>
   <description>Maven Javassist Parent.</description>
   <url>https://github.com/ArpNetworking/maven-javassist</url>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>0.1.0-SNAPSHOT</version>
 
   <licenses>
     <license>
@@ -65,78 +65,49 @@
     <url>https://github.com/arpnetworking/maven-javassist</url>
   </scm>
 
+  <modules>
+    <module>maven-javassist-core</module>
+    <module>maven-javassist-plugin</module>
+  </modules>
+
   <properties>
     <!--Dependency versions-->
     <hamcrest.version>2.0.0.0</hamcrest.version>
+    <javassist.version>3.20.0-GA</javassist.version>
     <junit.version>4.12</junit.version>
     <logback.steno.version>1.15.0</logback.steno.version>
     <mockito.version>1.10.19</mockito.version>
-
-    <!-- Plugin versions -->
-    <javassist.maven.plugin.version>2.2-SNAPSHOT</javassist.maven.plugin.version>
-
-    <!-- Findbugs -->
-    <findbugs.exclude>${project.basedir}/findbugs.exclude.xml</findbugs.exclude>
-
-    <!-- Code Coverage -->
-    <jacoco.check.line.coverage>1.0</jacoco.check.line.coverage>
-    <jacoco.check.branch.coverage>1.0</jacoco.check.branch.coverage>
   </properties>
   <build>
-    <plugins>
-      <!-- Enable Inherited Plugins -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-javadoc-plugin</artifactId>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-source-plugin</artifactId>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-checkstyle-plugin</artifactId>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-failsafe-plugin</artifactId>
-      </plugin>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>findbugs-maven-plugin</artifactId>
-      </plugin>
-      <plugin>
-        <groupId>com.rimerosolutions.maven.plugins</groupId>
-        <artifactId>wrapper-maven-plugin</artifactId>
-        <inherited>false</inherited>
-      </plugin>
-    </plugins>
+    <pluginManagement>
+      <plugins>
+        <!-- Enable Inherited Plugins -->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-javadoc-plugin</artifactId>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-source-plugin</artifactId>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-checkstyle-plugin</artifactId>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-failsafe-plugin</artifactId>
+        </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>findbugs-maven-plugin</artifactId>
+        </plugin>
+        <plugin>
+          <groupId>com.rimerosolutions.maven.plugins</groupId>
+          <artifactId>wrapper-maven-plugin</artifactId>
+          <inherited>false</inherited>
+        </plugin>
+      </plugins>
+    </pluginManagement>
   </build>
-  <dependencies>
-    <!-- Essential -->
-    <dependency>
-      <groupId>com.arpnetworking.logback</groupId>
-      <artifactId>logback-steno</artifactId>
-      <version>${logback.steno.version}</version>
-    </dependency>
-    <!-- Test - General -->
-    <dependency>
-      <groupId>org.hamcrest</groupId>
-      <artifactId>java-hamcrest</artifactId>
-      <version>${hamcrest.version}</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>${junit.version}</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.mockito</groupId>
-      <artifactId>mockito-core</artifactId>
-      <version>${mockito.version}</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
 </project>
