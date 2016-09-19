@@ -79,36 +79,4 @@
     <logback.steno.version>1.15.0</logback.steno.version>
     <mockito.version>1.10.19</mockito.version>
   </properties>
-  <build>
-    <pluginManagement>
-      <plugins>
-        <!-- Enable Inherited Plugins -->
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-javadoc-plugin</artifactId>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-source-plugin</artifactId>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-checkstyle-plugin</artifactId>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-failsafe-plugin</artifactId>
-        </plugin>
-        <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>findbugs-maven-plugin</artifactId>
-        </plugin>
-        <plugin>
-          <groupId>com.rimerosolutions.maven.plugins</groupId>
-          <artifactId>wrapper-maven-plugin</artifactId>
-          <inherited>false</inherited>
-        </plugin>
-      </plugins>
-    </pluginManagement>
-  </build>
 </project>
