@@ -9,8 +9,8 @@ Maven Javassist
     <img src="https://travis-ci.org/ArpNetworking/maven-javassist.png"
          alt="Travis Build">
 </a>
-<a href="http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.arpnetworking.commons%22%20a%3A%22maven-javassist%22">
-    <img src="https://img.shields.io/maven-central/v/com.arpnetworking.commons/maven-javassist.svg"
+<a href="http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.arpnetworking.commons%22%20a%3A%22maven-javassist-core%22">
+    <img src="https://img.shields.io/maven-central/v/com.arpnetworking.commons/maven-javassist-core.svg"
          alt="Maven Artifact">
 </a>
 
