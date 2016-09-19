@@ -19,6 +19,46 @@ Provides a Maven plugin for processing classes using [Javassist](http://www.java
 Usage
 -----
 
+Add the plugin block to your project. Specify at least the class path to your processor.
+
+```xml
+<plugin>
+  <groupId>com.arpnetworking.commons</groupId>
+  <artifactId>javassist-maven-plugin<artifactId>
+  <version>0.1.0</version>
+  <executions>
+    <execution>
+      <id>javassist-process</id>
+      <goals>
+        <goal>process</goal>
+      </goals>
+      <configuration>
+        <processor>${YOUR_PROCESSOR_CLASS}</processor>
+      </configuration>
+    </execution>
+  </executions>
+</plugin>
+```
+
+You can also process your test classes by adding an additional execution with the _test-process_ goal:
+
+```xml
+<execution>
+  <id>javassist-test-process</id>
+  <goals>
+    <goal>test-process</goal>
+  </goals>
+  <configuration>
+    <processor>${YOUR_PROCESSOR_CLASS}</processor>
+  </configuration>
+</execution>
+```
+
+Additional configuration options include:
+
+* includes - set of path matching globs for including classes for processing; if not specified all classes are included.
+* excludes - set of path matching globs for excluding classes from processing; if not specified no classes are excluded.
+* threads - the number of threads to execute processing with or threads per core if the value ends with "C".
 
 Development
 -----------
