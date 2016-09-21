@@ -18,7 +18,7 @@
   <parent>
     <groupId>com.arpnetworking.commons</groupId>
     <artifactId>javassist-maven-parent</artifactId>
-    <version>0.1.0-SNAPSHOT</version>
+    <version>0.1.3-SNAPSHOT</version>
   </parent>
 
   <modelVersion>4.0.0</modelVersion>
@@ -39,10 +39,32 @@
     <connection>scm:git:git@github.com:arpnetworking/maven-javassist.git</connection>
     <developerConnection>scm:git:git@github.com:arpnetworking/maven-javassist.git</developerConnection>
     <url>https://github.com/arpnetworking/maven-javassist</url>
+    <tag>HEAD</tag>
   </scm>
 
   <build>
     <plugins>
+      <!-- Enable Inherited Plugins -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-failsafe-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>findbugs-maven-plugin</artifactId>
+      </plugin>
       <!-- TODO: Remove with the next release of javassist -->
       <!-- See: https://github.com/jboss-javassist/javassist/issues/107 -->
       <plugin>
