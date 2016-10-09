@@ -65,15 +65,6 @@
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>findbugs-maven-plugin</artifactId>
       </plugin>
-      <!-- TODO: Remove with the next release of javassist -->
-      <!-- See: https://github.com/jboss-javassist/javassist/issues/107 -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <configuration combine.self="override">
-          <compilerArgs />
-        </configuration>
-      </plugin>
     </plugins>
   </build>
 
