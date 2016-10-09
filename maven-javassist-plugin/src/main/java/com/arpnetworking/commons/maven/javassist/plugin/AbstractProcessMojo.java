@@ -82,7 +82,7 @@ public abstract class AbstractProcessMojo extends AbstractMojo {
             final Predicate<CtClass> excludePredicate = createExcludePredicate(excludes);
             final ExecutorService executorService = createExecutorService(threads);
 
-            final CompletableFuture[] completableFutures = getClasspathElementsToProcess(project).stream()
+            final CompletableFuture<?>[] completableFutures = getClasspathElementsToProcess(project).stream()
                     .flatMap(classpathElement -> findClasses(classPool, classpathElement).stream())
                     .map(ctClass -> CompletableFuture.runAsync(
                             new ClassProcessorTask(
