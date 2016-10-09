@@ -29,7 +29,7 @@
   <name>Maven Javassist Parent</name>
   <description>Maven Javassist Parent.</description>
   <url>https://github.com/ArpNetworking/maven-javassist</url>
-  <version>0.1.2-SNAPSHOT</version>
+  <version>0.1.3-SNAPSHOT</version>
 
   <licenses>
     <license>
