@@ -36,25 +36,16 @@ import java.util.List;
 @Mojo(name = "test-process", defaultPhase = LifecyclePhase.PROCESS_TEST_CLASSES, requiresDependencyResolution = ResolutionScope.TEST)
 public class ProcessTestMojo extends AbstractProcessMojo {
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     protected Path getOutputDirectory(final MavenProject project) {
         return Paths.get(project.getBuild().getTestOutputDirectory());
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     protected List<String> getClasspathElementsToProcess(final MavenProject project) throws MojoExecutionException {
         return Collections.singletonList(project.getBuild().getTestOutputDirectory());
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     protected List<String> getClasspathElementsToLoad(final MavenProject project) throws MojoExecutionException {
         try {
