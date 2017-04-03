@@ -74,9 +74,6 @@ import java.util.function.Predicate;
         _log = log;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void run() {
         // Check if the class is accepted

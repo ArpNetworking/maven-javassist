@@ -25,17 +25,11 @@ import javassist.CtClass;
  */
 public final class TestProcessor implements ClassProcessor {
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public boolean accept(final CtClass ctClass) {
         return false;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void process(final CtClass ctClass) {
         // Nothing to do

@@ -61,9 +61,6 @@ import javax.annotation.Nullable;
  */
 public abstract class AbstractProcessMojo extends AbstractMojo {
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void execute() throws MojoExecutionException, MojoFailureException {
         final ClassLoader originalContextClassLoader = Thread.currentThread().getContextClassLoader();

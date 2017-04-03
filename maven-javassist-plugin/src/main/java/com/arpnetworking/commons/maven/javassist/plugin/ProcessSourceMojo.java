@@ -36,25 +36,16 @@ import java.util.List;
 @Mojo(name = "process", defaultPhase = LifecyclePhase.PROCESS_CLASSES, requiresDependencyResolution = ResolutionScope.COMPILE_PLUS_RUNTIME)
 public class ProcessSourceMojo extends AbstractProcessMojo {
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     protected Path getOutputDirectory(final MavenProject project) {
         return Paths.get(project.getBuild().getOutputDirectory());
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     protected List<String> getClasspathElementsToProcess(final MavenProject project) throws MojoExecutionException {
         return Collections.singletonList(project.getBuild().getOutputDirectory());
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     protected List<String> getClasspathElementsToLoad(final MavenProject project) throws MojoExecutionException {
         try {
