@@ -16,7 +16,6 @@
 package com.arpnetworking.commons.maven.javassist.plugin;
 
 import com.arpnetworking.commons.maven.javassist.ClassProcessor;
-import com.google.common.base.Throwables;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import javassist.CannotCompileException;
 import javassist.CtClass;
@@ -215,11 +214,11 @@ import java.util.function.Predicate;
         classDirectory.mkdirs();
 
         // Write the class to the file
-        try (final DataOutputStream outputStream = new DataOutputStream(
+        try (DataOutputStream outputStream = new DataOutputStream(
                 new BufferedOutputStream(context.newFileOutputStream(classFile)))) {
             _ctClass.toBytecode(outputStream);
         } catch (final IOException | CannotCompileException e) {
-            throw Throwables.propagate(e);
+            throw new RuntimeException(e);
         }
 
         // Update the build context

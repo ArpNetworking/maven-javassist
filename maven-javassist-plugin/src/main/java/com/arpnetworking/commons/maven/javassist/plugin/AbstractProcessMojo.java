@@ -111,7 +111,7 @@ public abstract class AbstractProcessMojo extends AbstractMojo {
      * @param mavenProject the {@code MavenProject} instance.
      * @return Output directory.
      */
-    protected abstract Path getOutputDirectory(final MavenProject mavenProject);
+    protected abstract Path getOutputDirectory(MavenProject mavenProject);
 
     /**
      * Return all the applicable class path elements to process for this goal.
@@ -120,7 +120,7 @@ public abstract class AbstractProcessMojo extends AbstractMojo {
      * @return {@code List} of class path elements.
      * @throws MojoExecutionException if classpath elements cannot be retrieved.
      */
-    protected abstract List<String> getClasspathElementsToProcess(final MavenProject mavenProject) throws MojoExecutionException;
+    protected abstract List<String> getClasspathElementsToProcess(MavenProject mavenProject) throws MojoExecutionException;
 
     /**
      * Return all the applicable class path elements to load for this goal.
@@ -129,7 +129,7 @@ public abstract class AbstractProcessMojo extends AbstractMojo {
      * @return {@code List} of class path elements.
      * @throws MojoExecutionException if classpath elements cannot be retrieved.
      */
-    protected abstract List<String> getClasspathElementsToLoad(final MavenProject mavenProject) throws MojoExecutionException;
+    protected abstract List<String> getClasspathElementsToLoad(MavenProject mavenProject) throws MojoExecutionException;
 
     /* package private */ URLClassLoader createUrlClassLoader(
             final List<String> classpathElements,
