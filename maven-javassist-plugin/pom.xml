@@ -18,7 +18,7 @@
   <parent>
     <groupId>com.arpnetworking.commons</groupId>
     <artifactId>javassist-maven-parent</artifactId>
-    <version>0.1.4-SNAPSHOT</version>
+    <version>0.2.0-SNAPSHOT</version>
   </parent>
 
   <modelVersion>4.0.0</modelVersion>
@@ -45,13 +45,13 @@
   <properties>
     <!--Dependency versions-->
     <findbugs.annotations.version>3.0.1</findbugs.annotations.version>
-    <guava.version>19.0</guava.version>
-    <jsr305.version>3.0.0</jsr305.version>
-    <maven.core.version>3.3.9</maven.core.version>
-    <maven.model.version>3.3.9</maven.model.version>
-    <maven.plugin.annotations.version>3.4</maven.plugin.annotations.version>
-    <maven.plugin.api.version>3.3.9</maven.plugin.api.version>
-    <maven.plugin.testing.harness.version>1.2</maven.plugin.testing.harness.version>
+    <guava.version>23.0</guava.version>
+    <jsr305.version>3.0.2</jsr305.version>
+    <maven.core.version>3.5.0</maven.core.version>
+    <maven.model.version>3.5.0</maven.model.version>
+    <maven.plugin.annotations.version>3.5</maven.plugin.annotations.version>
+    <maven.plugin.api.version>3.5.0</maven.plugin.api.version>
+    <maven.plugin.testing.harness.version>3.3.0</maven.plugin.testing.harness.version>
     <plexus.build.api.version>0.0.7</plexus.build.api.version>
 
     <!-- Plugin versions -->
