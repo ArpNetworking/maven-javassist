@@ -134,19 +134,20 @@ import java.util.function.Predicate;
             final ClassProcessor processor) {
         final ClassFile classFile = ctClass.getClassFile();
         AnnotationsAttribute annotationAttribute = null;
+        Annotation annotation = null;
         for (final Object attributeObject : classFile.getAttributes()) {
             if (attributeObject instanceof AnnotationsAttribute) {
                 annotationAttribute = (AnnotationsAttribute) attributeObject;
-                break;
+                annotation = annotationAttribute.getAnnotation(PROCESSED_ANNOTATION_CLASS);
+                if (annotation != null) {
+                    break;
+                }
             }
         }
-        if (annotationAttribute == null) {
-            _log.debug("Creating annotation attribute on: " + ctClass.getName());
-            annotationAttribute = new AnnotationsAttribute(classFile.getConstPool(), AnnotationsAttribute.visibleTag);
-            classFile.addAttribute(annotationAttribute);
-        }
-        Annotation annotation = annotationAttribute.getAnnotation(PROCESSED_ANNOTATION_CLASS);
         if (annotation == null) {
+            _log.debug("Creating annotation attribute on: " + ctClass.getName());
+            annotationAttribute = new AnnotationsAttribute(classFile.getConstPool(), AnnotationsAttribute.invisibleTag);
+            classFile.addAttribute(annotationAttribute);
             _log.debug("Creating processed annotation on: " + ctClass.getName());
             annotation = new Annotation(PROCESSED_ANNOTATION_CLASS, classFile.getConstPool());
         }
@@ -179,19 +180,16 @@ import java.util.function.Predicate;
         for (final Object attributeObject : classFile.getAttributes()) {
             if (attributeObject instanceof AnnotationsAttribute) {
                 annotationAttribute = (AnnotationsAttribute) attributeObject;
-                break;
-            }
-        }
-        if (annotationAttribute != null) {
-            final Annotation annotation = annotationAttribute.getAnnotation(PROCESSED_ANNOTATION_CLASS);
-            if (annotation != null) {
-                final MemberValue value = annotation.getMemberValue("value");
-                _log.debug("Existing processed annotation on: " + ctClass.getName() + " = " + value);
-                final ArrayMemberValue valueArray = (ArrayMemberValue) value;
-                for (final MemberValue processorValue : valueArray.getValue()) {
-                    final StringMemberValue processorValueString = (StringMemberValue) processorValue;
-                    if (processor.getClass().getName().equals(processorValueString.getValue())) {
-                        return true;
+                final Annotation annotation = annotationAttribute.getAnnotation(PROCESSED_ANNOTATION_CLASS);
+                if (annotation != null) {
+                    final MemberValue value = annotation.getMemberValue("value");
+                    _log.debug("Existing processed annotation on: " + ctClass.getName() + " = " + value);
+                    final ArrayMemberValue valueArray = (ArrayMemberValue) value;
+                    for (final MemberValue processorValue : valueArray.getValue()) {
+                        final StringMemberValue processorValueString = (StringMemberValue) processorValue;
+                        if (processor.getClass().getName().equals(processorValueString.getValue())) {
+                            return true;
+                        }
                     }
                 }
             }

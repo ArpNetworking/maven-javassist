@@ -26,7 +26,7 @@ import java.lang.annotation.Target;
  * @author Ville Koskela (ville dot koskela at inscopemetrics dot com)
  */
 @Target({ ElementType.TYPE })
-@Retention(RetentionPolicy.RUNTIME)
+@Retention(RetentionPolicy.CLASS)
 public @interface Processed {
 
     /**
