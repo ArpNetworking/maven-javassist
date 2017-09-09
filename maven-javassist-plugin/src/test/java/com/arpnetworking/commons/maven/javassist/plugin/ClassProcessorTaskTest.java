@@ -295,6 +295,29 @@ public final class ClassProcessorTaskTest {
     }
 
     @Test
+    public void testMarkAsProcessedExistingAnnotation() throws NotFoundException {
+        final ClassPool classPool = createClassPool();
+        final CtClass existingAnnotationCtClass = classPool.get(
+                "com.arpnetworking.commons.maven.javassist.plugin.ClassProcessorTaskTest$DifferentlyAnnotatedClass");
+
+        final ClassProcessor testProcessor = new TestProcessor(true);
+
+        final ClassProcessorTask classProcessorTask = new ClassProcessorTask(
+                _context,
+                existingAnnotationCtClass,
+                testProcessor,
+                _includePredicate,
+                _excludePredicate,
+                _outputDirectory,
+                _log);
+
+        classProcessorTask.markAsProcessed(existingAnnotationCtClass, testProcessor);
+
+        existingAnnotationCtClass.defrost();
+        Assert.assertTrue(classProcessorTask.isAlreadyProcessed(existingAnnotationCtClass, testProcessor));
+    }
+
+    @Test
     public void testWriteFileFailure() throws NotFoundException, IOException, CannotCompileException {
         final Path outputDirectory = Paths.get("./target/test-data");
 
