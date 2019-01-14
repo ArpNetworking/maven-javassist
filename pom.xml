@@ -18,7 +18,7 @@
   <parent>
     <groupId>com.arpnetworking.build</groupId>
     <artifactId>arpnetworking-parent-pom</artifactId>
-    <version>1.1.0</version>
+    <version>1.1.10</version>
     <relativePath />
   </parent>
 
@@ -73,10 +73,10 @@
 
   <properties>
     <!--Dependency versions-->
-    <hamcrest.version>2.0.0.0</hamcrest.version>
-    <javassist.version>3.21.0-GA</javassist.version>
+    <hamcrest.version>2.1</hamcrest.version>
+    <javassist.version>3.24.1-GA</javassist.version>
     <junit.version>4.12</junit.version>
-    <logback.steno.version>1.18.0</logback.steno.version>
-    <mockito.version>2.7.0</mockito.version>
+    <logback.steno.version>1.18.2</logback.steno.version>
+    <mockito.version>2.23.4</mockito.version>
   </properties>
 </project>
