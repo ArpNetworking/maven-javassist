@@ -177,7 +177,7 @@ public final class ClassProcessorTaskTest {
     public void testAcceptAlreadyProcessed() throws NotFoundException {
         final ClassPool classPool = createClassPool();
         final CtClass alreadyProcessedCtClass = classPool.get(
-                "com.arpnetworking.commons.maven.javassist.plugin.ClassProcessorTaskTest$AlreadyProcessedClass");
+                "com.arpnetworking.commons.maven.javassist.plugin.ClassProcessorTaskTest$ReadOnlyAlreadyProcessedClass");
 
         final ClassProcessor testProcessor = new TestProcessor(true);
 
@@ -257,7 +257,7 @@ public final class ClassProcessorTaskTest {
     public void testIsAlreadyProcessedCheckAnnotationType() throws NotFoundException {
         final ClassPool classPool = createClassPool();
         final CtClass differentlyAnnotatedCtClass = classPool.get(
-                "com.arpnetworking.commons.maven.javassist.plugin.ClassProcessorTaskTest$DifferentlyAnnotatedClass");
+                "com.arpnetworking.commons.maven.javassist.plugin.ClassProcessorTaskTest$ReadOnlyDifferentlyAnnotatedClass");
 
         final ClassProcessorTask classProcessorTask = new ClassProcessorTask(
                 _context,
@@ -405,6 +405,9 @@ public final class ClassProcessorTaskTest {
 
     @Processed(value = {"com.arpnetworking.commons.maven.javassist.plugin.ClassProcessorTaskTest$TestProcessor"})
     private static final class AlreadyProcessedClass {}
+    
+    @Processed(value = {"com.arpnetworking.commons.maven.javassist.plugin.ClassProcessorTaskTest$TestProcessor"})
+    private static final class ReadOnlyAlreadyProcessedClass {}
 
     @Processed(value = {"com.example.MyClassProcessor"})
     private static final class ProcessedBySomethingElseClass {}
@@ -417,4 +420,10 @@ public final class ClassProcessorTaskTest {
      */
     @Deprecated
     private static final class DifferentlyAnnotatedClass {}
+
+    /**
+     * @deprecated Just for testing.
+     */
+    @Deprecated
+    private static final class ReadOnlyDifferentlyAnnotatedClass {}
 }
