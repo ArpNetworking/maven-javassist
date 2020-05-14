@@ -44,13 +44,13 @@
 
   <properties>
     <!--Dependency versions-->
-    <findbugs.annotations.version>3.0.1</findbugs.annotations.version>
-    <guava.version>25.1-jre</guava.version>
+    <spotbugs.annotations.version>4.0.3</spotbugs.annotations.version>
+    <guava.version>29.0-jre</guava.version>
     <jsr305.version>3.0.2</jsr305.version>
-    <maven.core.version>3.6.0</maven.core.version>
-    <maven.model.version>3.6.0</maven.model.version>
+    <maven.core.version>3.6.3</maven.core.version>
+    <maven.model.version>3.6.3</maven.model.version>
     <maven.plugin.annotations.version>3.6.0</maven.plugin.annotations.version>
-    <maven.plugin.api.version>3.6.0</maven.plugin.api.version>
+    <maven.plugin.api.version>3.6.3</maven.plugin.api.version>
     <maven.plugin.testing.harness.version>3.3.0</maven.plugin.testing.harness.version>
     <plexus.build.api.version>0.0.7</plexus.build.api.version>
 
@@ -83,8 +83,8 @@
         <artifactId>maven-failsafe-plugin</artifactId>
       </plugin>
       <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>findbugs-maven-plugin</artifactId>
+        <groupId>com.github.spotbugs</groupId>
+        <artifactId>spotbugs-maven-plugin</artifactId>
       </plugin>
       <plugin>
         <groupId>com.rimerosolutions.maven.plugins</groupId>
@@ -180,9 +180,9 @@
       <version>${jsr305.version}</version>
     </dependency>
     <dependency>
-      <groupId>com.google.code.findbugs</groupId>
-      <artifactId>findbugs-annotations</artifactId>
-      <version>${findbugs.annotations.version}</version>
+      <groupId>com.github.spotbugs</groupId>
+      <artifactId>spotbugs-annotations</artifactId>
+      <version>${spotbugs.annotations.version}</version>
     </dependency>
     <!-- Test - General -->
     <dependency>
