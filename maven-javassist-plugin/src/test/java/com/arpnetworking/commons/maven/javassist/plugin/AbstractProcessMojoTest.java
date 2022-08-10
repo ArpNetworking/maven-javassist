@@ -18,6 +18,8 @@ package com.arpnetworking.commons.maven.javassist.plugin;
 import com.arpnetworking.commons.maven.javassist.ClassProcessor;
 import javassist.CtClass;
 import org.apache.maven.plugin.MojoExecutionException;
+import org.hamcrest.MatcherAssert;
+import org.hamcrest.Matchers;
 import org.junit.Assert;
 import org.junit.Test;
 import org.mockito.Mockito;
@@ -38,7 +40,7 @@ public final class AbstractProcessMojoTest {
     @Test
     public void testCreateExecutorServiceSingleThread() {
         final ExecutorService executorService = AbstractProcessMojo.createExecutorService("1");
-        Assert.assertTrue(executorService instanceof ThreadPoolExecutor);
+        MatcherAssert.assertThat(executorService, Matchers.instanceOf(ThreadPoolExecutor.class));
         final ThreadPoolExecutor threadPoolExecutor = (ThreadPoolExecutor) executorService;
         Assert.assertEquals(1, threadPoolExecutor.getCorePoolSize());
         Assert.assertEquals(1, threadPoolExecutor.getMaximumPoolSize());
@@ -47,7 +49,7 @@ public final class AbstractProcessMojoTest {
     @Test
     public void testCreateExecutorServiceMultiThread() {
         final ExecutorService executorService = AbstractProcessMojo.createExecutorService("4");
-        Assert.assertTrue(executorService instanceof ThreadPoolExecutor);
+        MatcherAssert.assertThat(executorService, Matchers.instanceOf(ThreadPoolExecutor.class));
         final ThreadPoolExecutor threadPoolExecutor = (ThreadPoolExecutor) executorService;
         Assert.assertEquals(4, threadPoolExecutor.getCorePoolSize());
         Assert.assertEquals(4, threadPoolExecutor.getMaximumPoolSize());
@@ -57,7 +59,7 @@ public final class AbstractProcessMojoTest {
     public void testCreateExecutorServicePerCoreThread() {
         final int cores = Runtime.getRuntime().availableProcessors();
         final ExecutorService executorService = AbstractProcessMojo.createExecutorService("2C");
-        Assert.assertTrue(executorService instanceof ThreadPoolExecutor);
+        MatcherAssert.assertThat(executorService, Matchers.instanceOf(ThreadPoolExecutor.class));
         final ThreadPoolExecutor threadPoolExecutor = (ThreadPoolExecutor) executorService;
         Assert.assertEquals(2 * cores, threadPoolExecutor.getCorePoolSize());
         Assert.assertEquals(2 * cores, threadPoolExecutor.getMaximumPoolSize());
@@ -78,7 +80,7 @@ public final class AbstractProcessMojoTest {
         final ClassProcessor processor = AbstractProcessMojo.createProcessor(
                 Thread.currentThread().getContextClassLoader(),
                 "com.arpnetworking.commons.maven.javassist.plugin.TestProcessor");
-        Assert.assertTrue(processor instanceof TestProcessor);
+        MatcherAssert.assertThat(processor, Matchers.instanceOf(TestProcessor.class));
     }
 
     @Test(expected = MojoExecutionException.class)

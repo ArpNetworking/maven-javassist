@@ -205,7 +205,7 @@ public abstract class AbstractProcessMojo extends AbstractMojo {
             final String processorClassName)
             throws MojoExecutionException {
         try {
-            final Object classProcessor = classLoader.loadClass(processorClassName).newInstance();
+            final Object classProcessor = classLoader.loadClass(processorClassName).getDeclaredConstructor().newInstance();
             if (classProcessor instanceof ClassProcessor) {
                 return (ClassProcessor) classProcessor;
             }

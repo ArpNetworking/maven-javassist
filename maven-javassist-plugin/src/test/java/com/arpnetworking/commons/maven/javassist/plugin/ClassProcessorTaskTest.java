@@ -23,6 +23,8 @@ import javassist.CtClass;
 import javassist.LoaderClassPath;
 import javassist.NotFoundException;
 import org.apache.maven.plugin.logging.Log;
+import org.hamcrest.MatcherAssert;
+import org.hamcrest.Matchers;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -341,7 +343,7 @@ public final class ClassProcessorTaskTest {
             // CHECKSTYLE.OFF: IllegalCatch
         } catch (final RuntimeException e) {
             // CHECKSTYLE.ON: IllegalCatch
-            Assert.assertTrue(e.getCause() instanceof IOException);
+            MatcherAssert.assertThat(e.getCause(), Matchers.instanceOf(IOException.class));
         }
     }
 
