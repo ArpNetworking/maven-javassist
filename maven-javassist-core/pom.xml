@@ -18,7 +18,7 @@
   <parent>
     <groupId>com.arpnetworking.commons</groupId>
     <artifactId>javassist-maven-parent</artifactId>
-    <version>0.2.4</version>
+    <version>0.2.5-SNAPSHOT</version>
   </parent>
 
   <modelVersion>4.0.0</modelVersion>
@@ -39,7 +39,7 @@
     <connection>scm:git:git@github.com:arpnetworking/maven-javassist.git</connection>
     <developerConnection>scm:git:git@github.com:arpnetworking/maven-javassist.git</developerConnection>
     <url>https://github.com/arpnetworking/maven-javassist</url>
-    <tag>javassist-maven-parent-0.2.4</tag>
+    <tag>HEAD</tag>
   </scm>
 
   <build>
