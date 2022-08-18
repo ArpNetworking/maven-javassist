@@ -29,7 +29,7 @@
   <name>Maven Javassist Parent</name>
   <description>Maven Javassist Parent.</description>
   <url>https://github.com/ArpNetworking/maven-javassist</url>
-  <version>0.2.6-SNAPSHOT</version>
+  <version>0.2.6</version>
 
   <licenses>
     <license>
@@ -63,7 +63,7 @@
     <connection>scm:git:git@github.com:arpnetworking/maven-javassist.git</connection>
     <developerConnection>scm:git:git@github.com:arpnetworking/maven-javassist.git</developerConnection>
     <url>https://github.com/arpnetworking/maven-javassist</url>
-    <tag>HEAD</tag>
+    <tag>javassist-maven-parent-0.2.6</tag>
   </scm>
 
   <modules>
