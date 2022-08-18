@@ -75,8 +75,8 @@
     <!--Dependency versions-->
     <hamcrest.version>2.2</hamcrest.version>
     <javassist.version>3.29.1-GA</javassist.version>
-    <junit.version>4.13</junit.version>
-    <logback.steno.version>1.18.2</logback.steno.version>
-    <mockito.version>2.23.4</mockito.version>
+    <junit.version>4.13.2</junit.version>
+    <logback.steno.version>1.19.0</logback.steno.version>
+    <mockito.version>4.7.0</mockito.version>
   </properties>
 </project>

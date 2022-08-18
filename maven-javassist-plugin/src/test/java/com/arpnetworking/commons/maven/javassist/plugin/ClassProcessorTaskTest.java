@@ -25,6 +25,7 @@ import javassist.NotFoundException;
 import org.apache.maven.plugin.logging.Log;
 import org.hamcrest.MatcherAssert;
 import org.hamcrest.Matchers;
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -48,9 +49,15 @@ import java.util.function.Predicate;
  */
 public final class ClassProcessorTaskTest {
 
+
     @Before
     public void setUp() {
-        MockitoAnnotations.initMocks(this);
+        _mocks = MockitoAnnotations.openMocks(this);
+    }
+
+    @After
+    public void after() throws Exception {
+        _mocks.close();
     }
 
     @Test
@@ -355,6 +362,7 @@ public final class ClassProcessorTaskTest {
         return classPool;
     }
 
+    private AutoCloseable _mocks;
     @Mock
     private BuildContext _context;
     @Mock
