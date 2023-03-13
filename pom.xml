@@ -77,6 +77,6 @@
     <javassist.version>3.29.2-GA</javassist.version>
     <junit.version>4.13.2</junit.version>
     <logback.steno.version>1.19.0</logback.steno.version>
-    <mockito.version>5.1.1</mockito.version>
+    <mockito.version>5.2.0</mockito.version>
   </properties>
 </project>
