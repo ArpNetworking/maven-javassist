@@ -44,18 +44,18 @@
 
   <properties>
     <!--Dependency versions-->
-    <spotbugs.annotations.version>4.7.1</spotbugs.annotations.version>
+    <spotbugs.annotations.version>4.7.3</spotbugs.annotations.version>
     <guava.version>31.1-jre</guava.version>
     <jsr305.version>3.0.2</jsr305.version>
-    <maven.core.version>3.8.6</maven.core.version>
-    <maven.model.version>3.8.6</maven.model.version>
-    <maven.plugin.annotations.version>3.6.4</maven.plugin.annotations.version>
-    <maven.plugin.api.version>3.8.6</maven.plugin.api.version>
+    <maven.core.version>3.9.2</maven.core.version>
+    <maven.model.version>3.9.2</maven.model.version>
+    <maven.plugin.annotations.version>3.8.1</maven.plugin.annotations.version>
+    <maven.plugin.api.version>3.9.2</maven.plugin.api.version>
     <maven.plugin.testing.harness.version>3.3.0</maven.plugin.testing.harness.version>
     <plexus.build.api.version>0.0.7</plexus.build.api.version>
 
     <!-- Plugin versions -->
-    <maven-plugin-plugin.version>3.6.4</maven-plugin-plugin.version>
+    <maven-plugin-plugin.version>3.8.1</maven-plugin-plugin.version>
     <plexus-component-metadata.version>2.1.1</plexus-component-metadata.version>
 
     <!-- Code Coverage -->
