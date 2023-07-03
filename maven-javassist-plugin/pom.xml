@@ -48,7 +48,7 @@
     <guava.version>32.0.1-jre</guava.version>
     <jsr305.version>3.0.2</jsr305.version>
     <maven.core.version>3.9.2</maven.core.version>
-    <maven.model.version>3.9.2</maven.model.version>
+    <maven.model.version>3.9.3</maven.model.version>
     <maven.plugin.annotations.version>3.9.0</maven.plugin.annotations.version>
     <maven.plugin.api.version>3.9.2</maven.plugin.api.version>
     <maven.plugin.testing.harness.version>3.3.0</maven.plugin.testing.harness.version>
