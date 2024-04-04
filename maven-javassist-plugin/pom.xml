@@ -49,7 +49,7 @@
     <jsr305.version>3.0.2</jsr305.version>
     <maven.core.version>3.9.6</maven.core.version>
     <maven.model.version>3.9.6</maven.model.version>
-    <maven.plugin.annotations.version>3.11.0</maven.plugin.annotations.version>
+    <maven.plugin.annotations.version>3.12.0</maven.plugin.annotations.version>
     <maven.plugin.api.version>3.9.6</maven.plugin.api.version>
     <maven.plugin.testing.harness.version>3.3.0</maven.plugin.testing.harness.version>
     <plexus.build.api.version>0.0.7</plexus.build.api.version>
