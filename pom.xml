@@ -73,7 +73,7 @@
 
   <properties>
     <!--Dependency versions-->
-    <hamcrest.version>2.2</hamcrest.version>
+    <hamcrest.version>3.0</hamcrest.version>
     <javassist.version>3.30.2-GA</javassist.version>
     <junit.version>4.13.2</junit.version>
     <logback.steno.version>1.19.0</logback.steno.version>
