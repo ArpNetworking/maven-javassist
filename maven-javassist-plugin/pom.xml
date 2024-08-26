@@ -55,7 +55,7 @@
     <plexus.build.api.version>0.0.7</plexus.build.api.version>
 
     <!-- Plugin versions -->
-    <maven-plugin-plugin.version>3.13.1</maven-plugin-plugin.version>
+    <maven-plugin-plugin.version>3.14.0</maven-plugin-plugin.version>
     <plexus-component-metadata.version>2.2.0</plexus-component-metadata.version>
 
     <!-- Code Coverage -->
