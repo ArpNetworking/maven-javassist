@@ -270,6 +270,10 @@ public abstract class AbstractProcessMojo extends AbstractMojo {
 
     // CHECKSTYLE.OFF: MemberName - Member names are mapped to plugin configuration.
 
+    /* @Component is deprecated as per maven JSR-330. However, using the usual injection annotations is not available
+       until maven 3.1.0. We can remove our use of @Component once we no longer want to support maven versions <3.1.0.
+       See https://maven.apache.org/maven-jsr330.html#how-to-use-jsr-330-in-plugins for more info */
+    @SuppressWarnings("deprecation")
     @Component
     private BuildContext buildContext;
 
