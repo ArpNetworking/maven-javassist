@@ -47,7 +47,7 @@
     <spotbugs.annotations.version>4.9.3</spotbugs.annotations.version>
     <guava.version>33.4.8-jre</guava.version>
     <jsr305.version>3.0.2</jsr305.version>
-    <maven.core.version>3.9.10</maven.core.version>
+    <maven.core.version>3.9.11</maven.core.version>
     <maven.model.version>3.9.11</maven.model.version>
     <maven.plugin.annotations.version>3.15.1</maven.plugin.annotations.version>
     <maven.plugin.api.version>3.9.10</maven.plugin.api.version>
